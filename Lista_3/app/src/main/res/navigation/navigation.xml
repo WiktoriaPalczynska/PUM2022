@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/fragmentMain">
+
+    <fragment
+        android:id="@+id/fragmentMain"
+        android:name="pl.edu.uwr.pum.lista_3.FragmentMain"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_fragmentMain_to_fragmentDetail"
+            app:destination="@id/detailFragment" >
+            <argument
+                android:name="valNum"
+                app:argType="integer" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="pl.edu.uwr.pum.lista_3.FragmentDetail"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" >
+        <action
+            android:id="@+id/action_fragmentDetail_to_fragment1"
+            app:destination="@id/fragment1">
+            <argument
+                android:name="valNum"
+                app:argType="integer" />
+        </action>
+        <action
+            android:id="@+id/action_fragmentDetail_to_fragment3"
+            app:destination="@id/fragment3" >
+            <argument
+                android:name="valId"
+                app:argType="integer" />
+        </action>
+        <action
+            android:id="@+id/action_fragmentDetail_to_fragment4"
+            app:destination="@id/fragment4" >
+            <argument
+                android:name="valNum"
+                app:argType="integer" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/fragment1"
+        android:name="pl.edu.uwr.pum.lista_3.Fragment1"
+        android:label="fragment_1"
+        tools:layout="@layout/fragment_1" />
+    <fragment
+        android:id="@+id/fragment3"
+        android:name="pl.edu.uwr.pum.lista_3.Fragment3"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" />
+    <fragment
+        android:id="@+id/fragment4"
+        android:name="pl.edu.uwr.pum.lista_3.Fragment4"
+        android:label="fragment_4"
+        tools:layout="@layout/fragment_4" >
+        <action
+            android:id="@+id/action_fragment4_to_fragment2"
+            app:destination="@id/fragment2" >
+            <argument
+                android:name="valNum"
+                app:argType="integer" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/fragment2"
+        android:name="pl.edu.uwr.pum.lista_3.Fragment2"
+        android:label="fragment_2" >
+        <action
+            android:id="@+id/action_fragment1_to_fragment4"
+            app:destination="@id/fragment4" >
+            <argument
+                android:name="valNum"
+                app:argType="integer" />
+        </action>
+    </fragment>
+</navigation>
